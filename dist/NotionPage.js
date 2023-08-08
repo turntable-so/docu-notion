@@ -67,8 +67,8 @@ class NotionPage {
         return this.type === PageType.Simple
             ? this.title
             : // if it's a Database page, then we'll use the slug unless there is none, then we'd rather have the
-            // page name than an ugly id for the file name
-            ((_a = this.explicitSlug()) === null || _a === void 0 ? void 0 : _a.replace(/^\//, "")) || this.name;
+                // page name than an ugly id for the file name
+                ((_a = this.explicitSlug()) === null || _a === void 0 ? void 0 : _a.replace(/^\//, "")) || this.name;
     }
     // TODO: let's go farther in hiding this separate title vs name stuff. This seems like an implementation detail on the Notion side.
     // In Notion, pages from the Outline have "title"'s.
@@ -114,9 +114,6 @@ class NotionPage {
     }
     get keywords() {
         return this.getPlainTextProperty("Keywords", "");
-    }
-    get authors() {
-        return this.getPlainTextProperty("Authors", "");
     }
     get status() {
         return this.getSelectProperty("Status");
