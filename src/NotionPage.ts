@@ -133,12 +133,14 @@ export class NotionPage {
   public get keywords(): string | undefined {
     return this.getPlainTextProperty("Keywords", "");
   }
+  public get authors(): string | undefined {
+    return this.getPlainTextProperty("Authors", "");
+  }
   public get status(): string | undefined {
     return this.getSelectProperty("Status");
   }
-
   public get date(): string | undefined {
-    return this.getDateProperty("Date", "2020-10-10");
+    return this.getDateProperty("Date", "");
   }
 
   public getPlainTextProperty(

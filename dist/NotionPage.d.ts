@@ -27,6 +27,7 @@ export declare class NotionPage {
     get slug(): string;
     get hasExplicitSlug(): boolean;
     get keywords(): string | undefined;
+    get authors(): string | undefined;
     get status(): string | undefined;
     get date(): string | undefined;
     getPlainTextProperty(property: string, defaultIfEmpty: string): string;

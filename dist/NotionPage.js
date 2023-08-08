@@ -115,11 +115,14 @@ class NotionPage {
     get keywords() {
         return this.getPlainTextProperty("Keywords", "");
     }
+    get authors() {
+        return this.getPlainTextProperty("Authors", "");
+    }
     get status() {
         return this.getSelectProperty("Status");
     }
     get date() {
-        return this.getDateProperty("Date", "2020-10-10");
+        return this.getDateProperty("Date", "");
     }
     getPlainTextProperty(property, defaultIfEmpty) {
         /* Notion strings look like this

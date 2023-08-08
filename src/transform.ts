@@ -259,6 +259,8 @@ function getFrontMatter(page: NotionPage): string {
   frontmatter += `slug: ${page.slug ?? ""}\n`;
   if (page.keywords) frontmatter += `keywords: [${page.keywords}]\n`;
   if (page.date) frontmatter += `date: ${page.date}\n`;
+  if (page.authors) frontmatter += `authors: [${page.authors}]\n`;
+
 
 
   frontmatter += "---\n";
