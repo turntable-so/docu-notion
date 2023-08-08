@@ -70,11 +70,11 @@ function doTransformsOnMarkdown(context, config, input) {
         const regexMods = config.plugins
             .filter(plugin => !!plugin.regexMarkdownModifications)
             .map(plugin => {
-            const mods = plugin.regexMarkdownModifications;
-            // stick the name of the plugin into each mode for logging
-            const modsWithNames = mods.map(m => (Object.assign({ name: plugin.name }, m)));
-            return modsWithNames;
-        })
+                const mods = plugin.regexMarkdownModifications;
+                // stick the name of the plugin into each mode for logging
+                const modsWithNames = mods.map(m => (Object.assign({ name: plugin.name }, m)));
+                return modsWithNames;
+            })
             .flat();
         // regex that matches markdown code blocks
         const codeBlocks = /```.*\n[\s\S]*?\n```/;
@@ -111,7 +111,7 @@ function doTransformsOnMarkdown(context, config, input) {
                         const partStartingFromThisMatch = body.substring(match.index); // ?
                         body =
                             precedingPart +
-                                partStartingFromThisMatch.replace(original, replacement);
+                            partStartingFromThisMatch.replace(original, replacement);
                         // add any library imports
                         (_a = mod.imports) === null || _a === void 0 ? void 0 : _a.forEach(imp => imports.add(imp));
                     }
@@ -192,9 +192,9 @@ function getFrontMatter(page) {
     frontmatter += `title: ${page.nameOrTitle.replaceAll(":", "-")}\n`; // I have not found a way to escape colons
     frontmatter += `sidebar_position: ${page.order}\n`;
     frontmatter += `slug: ${(_a = page.slug) !== null && _a !== void 0 ? _a : ""}\n`;
-    if (page.keywords)
-        frontmatter += `keywords: [${page.keywords}]\n`;
-    frontmatter += `date: ${page.date}\n`;
+    if (page.keywords) frontmatter += `keywords: [${page.keywords}]\n`;
+    if (page.date) frontmatter += `date: ${page.date}\n`;
+    if (page.authors) frontmatter += `authors: [${page.authors}]\n`
     frontmatter += "---\n";
     return frontmatter;
 }
