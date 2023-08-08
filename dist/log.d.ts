@@ -1,0 +1,11 @@
+type levels = "info" | "verbose" | "debug";
+export declare function setLogLevel(l: levels): void;
+export declare function error(s: string): void;
+export declare function warning(s: string): void;
+export declare function info(s: string): void;
+export declare function group(s: string): void;
+export declare function endGroup(): void;
+export declare function verbose(s: string): void;
+export declare function logDebugFn(label: string, runIfLoggingDebug: () => string): void;
+export declare function logDebug(label: string, info: string): void;
+export {};
