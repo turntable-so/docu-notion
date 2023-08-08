@@ -3,6 +3,7 @@ import {
   imgurGifEmbed,
   vimeoEmbed,
   youtubeEmbed,
+  notionEmbed,
 } from "../plugins/embedTweaks";
 import { standardImageTransformer } from "../images";
 import { standardInternalLinkConversion } from "../plugins/internalLinks";
@@ -40,6 +41,7 @@ const defaultConfig: IDocuNotionConfig = {
     gifEmbed,
     youtubeEmbed,
     vimeoEmbed,
+    notionEmbed,
   ],
 };
 

@@ -137,6 +137,10 @@ export class NotionPage {
     return this.getSelectProperty("Status");
   }
 
+  public get date(): string | undefined {
+    return this.getDateProperty("Date", "2020-10-10");
+  }
+
   public getPlainTextProperty(
     property: string,
     defaultIfEmpty: string

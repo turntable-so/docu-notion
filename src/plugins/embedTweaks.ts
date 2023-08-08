@@ -45,3 +45,17 @@ export const vimeoEmbed: IPlugin = {
     },
   ],
 };
+
+export const notionEmbed: IPlugin = {
+  name: "notion",
+  regexMarkdownModifications: [
+    {
+      regex: /\[.*\]\((https:\/\/.*secure.notion-static.com.*)\)/,
+      // we use to have the following, but the above should handle both the player an not-player urls.
+      //regex: /\[.*\]\((.*player\.vimeo.*)\)/gm, // player.vimeo
+
+      imports: [`import ReactPlayer from "react-player";`],
+      replacementPattern: `<ReactPlayer controls url="$1" />`,
+    },
+  ],
+};
